@@ -6,12 +6,12 @@ import LoansRepository, {
   LoansRepositoryInMemory,
 } from "../repositories/loans-repository";
 
-export default interface RepositoryFactory {
+export default interface RepositoriesFactory {
   createLoansRepository(): LoansRepository;
   createInstallmentsRepository(): InstallmentsRepository;
 }
 
-export class RepositoryInMemoryFactory implements RepositoryFactory {
+export class RepositoriesInMemoryFactory implements RepositoriesFactory {
   createLoansRepository(): LoansRepository {
     return LoansRepositoryInMemory.getInstance();
   }

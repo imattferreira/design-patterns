@@ -1,6 +1,6 @@
 import InstallmentsRepository from "../repositories/installments-repository";
 import LoansRepository from "../repositories/loans-repository";
-import RepositoryFactory from "../factories/repository-factory";
+import RepositoriesFactory from "../factories/repositories-factory";
 
 interface Input {
   loanId: string;
@@ -22,10 +22,10 @@ export default class GetLoan {
   private readonly loansRepository: LoansRepository;
   private readonly installmentsRepository: InstallmentsRepository;
 
-  constructor(repositoryFactory: RepositoryFactory) {
-    this.loansRepository = repositoryFactory.createLoansRepository();
+  constructor(repositoriesFactory: RepositoriesFactory) {
+    this.loansRepository = repositoriesFactory.createLoansRepository();
     this.installmentsRepository =
-      repositoryFactory.createInstallmentsRepository();
+      repositoriesFactory.createInstallmentsRepository();
   }
 
   async execute(input: Input): Promise<Output> {

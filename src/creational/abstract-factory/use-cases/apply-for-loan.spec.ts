@@ -1,13 +1,13 @@
 import { describe, expect, it } from "vitest";
 import ApplyForLoan from "./apply-for-loan";
 import GetLoan from "./get-loan";
-import { RepositoryInMemoryFactory } from "../factories/repository-factory";
-import { MortgageLoanFactory } from "../factories/loan-factory";
+import { RepositoriesInMemoryFactory } from "../factories/repositories-factory";
+import { MortgageLoanFactory } from "../factories/loans-factory";
 
 describe("ApplyForLoan", () => {
   it("should request a mortgage loan", async () => {
     const loanFactory = new MortgageLoanFactory();
-    const repositoryInMemoryFactory = new RepositoryInMemoryFactory();
+    const repositoryInMemoryFactory = new RepositoriesInMemoryFactory();
     const applyForLoan = new ApplyForLoan(
       repositoryInMemoryFactory,
       loanFactory

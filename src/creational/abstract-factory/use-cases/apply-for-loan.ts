@@ -1,7 +1,7 @@
 import InstallmentsRepository from "../repositories/installments-repository";
-import LoanFactory from "../factories/loan-factory";
+import LoansFactory from "../factories/loans-factory";
 import LoansRepository from "../repositories/loans-repository";
-import RepositoryFactory from "../factories/repository-factory";
+import RepositoriesFactory from "../factories/repositories-factory";
 
 interface Input {
   amount: number;
@@ -18,22 +18,22 @@ export default class ApplyForLoan {
   private readonly installmentsRepository: InstallmentsRepository;
 
   constructor(
-    repositoryFactory: RepositoryFactory,
-    readonly loanFactory: LoanFactory
+    repositoriesFactory: RepositoriesFactory,
+    readonly loansFactory: LoansFactory
   ) {
-    this.loansRepository = repositoryFactory.createLoansRepository();
+    this.loansRepository = repositoriesFactory.createLoansRepository();
     this.installmentsRepository =
-      repositoryFactory.createInstallmentsRepository();
+      repositoriesFactory.createInstallmentsRepository();
   }
 
   async execute(input: Input): Promise<Output> {
-    const loan = this.loanFactory.createLoan(
+    const loan = this.loansFactory.createLoan(
       input.amount,
       input.income,
       input.installments
     );
     const installmentsCalculator =
-      this.loanFactory.createInstallmentCalculator();
+      this.loansFactory.createInstallmentCalculator();
     const installments = installmentsCalculator.calculate(loan);
 
     await this.loansRepository.save(loan);
