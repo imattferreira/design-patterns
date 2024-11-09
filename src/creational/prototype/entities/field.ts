@@ -8,6 +8,7 @@ export class Field implements Prototype {
     readonly title: string
   ) {}
 
+  // Prototype
   clone(): Field {
     return new Field(this.fieldId, this.type, this.title);
   }

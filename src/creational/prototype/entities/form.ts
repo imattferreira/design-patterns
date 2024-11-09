@@ -12,6 +12,7 @@ export class Form implements Prototype {
     this.fields = [];
   }
 
+  // Prototype
   clone(): Form {
     const newForm = new Form(this.formId, this.category, this.description);
     const fields: Field[] = [];

@@ -1,5 +1,6 @@
 import FlightTicket from "./flight-ticket";
 
+// Builder
 // Sometimes polymorphism can help more a little bit
 export default class FlightTicketBuilder {
   fromAirport!: string;

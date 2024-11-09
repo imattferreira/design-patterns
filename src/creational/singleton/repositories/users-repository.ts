@@ -13,6 +13,7 @@ export class UsersRepositoryInMemory implements UsersRepository {
     this.users = [];
   }
 
+  // Singleton
   static getInstance(): UsersRepository {
     if (!UsersRepositoryInMemory.instance) {
       UsersRepositoryInMemory.instance = new UsersRepositoryInMemory();
