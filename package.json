@@ -11,12 +11,17 @@
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/hapi": "^18.0.14",
     "@types/node": "^22.9.0",
     "typescript": "~5.6.2",
     "vite": "^5.4.10",
     "vitest": "^2.1.4"
   },
   "dependencies": {
-    "currency.js": "^2.0.4"
+    "axios": "^1.7.7",
+    "currency.js": "^2.0.4",
+    "express": "^4.21.1",
+    "hapi": "^18.1.0"
   }
 }
