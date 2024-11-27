@@ -1,3 +1,4 @@
+// Adapter pattern
 import express, { type Express } from "express";
 import Hapi from "hapi";
 

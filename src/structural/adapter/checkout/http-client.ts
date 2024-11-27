@@ -1,3 +1,4 @@
+// Adapter pattern
 import axios from "axios";
 
 export default interface HttpClient {
