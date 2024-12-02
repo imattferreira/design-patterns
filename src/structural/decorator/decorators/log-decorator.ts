@@ -1,3 +1,4 @@
+// Decorator
 class LogDecorator {
   constructor(private readonly executor: any) {}
 
